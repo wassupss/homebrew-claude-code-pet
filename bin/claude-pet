@@ -1,0 +1,3 @@
+#!/bin/bash
+# Claude Code Pet — Homebrew wrapper
+exec python3 "$(brew --prefix)/opt/claude-code-pet/libexec/pet.py" "$@"
