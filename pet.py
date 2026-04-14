@@ -1431,13 +1431,26 @@ def bar(value: float, total: float, width: int = 20, fill="█", empty="░") ->
     filled = max(0, min(width, filled))
     return fill * filled + empty * (width - filled)
 
+def _display_width(s: str) -> int:
+    """Return visual terminal width, counting CJK/emoji as 2 columns."""
+    import unicodedata
+    w = 0
+    for c in s:
+        cp  = ord(c)
+        eaw = unicodedata.east_asian_width(c)
+        if eaw in ('W', 'F') or cp >= 0x1F300:
+            w += 2
+        else:
+            w += 1
+    return w
+
 def print_speech_bubble(text: str, pet: dict):
     sp    = SPECIES[pet["species"]]
     stage = get_stage(pet["species"], pet["xp"])
     art   = sp["stages"][stage]["art"]
     color = sp["color"]
     inner = f"  {text}  "
-    w     = len(inner)
+    w     = _display_width(inner)
     half  = w // 2
     top   = "╭" + "─" * w + "╮"
     mid   = "│" + inner + "│"
