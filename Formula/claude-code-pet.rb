@@ -11,22 +11,29 @@ class ClaudeCodePet < Formula
   def install
     libexec.install "libexec/pet.py"
     libexec.install "setup-hooks.py"
-    bin.install "bin/claude-pet"
+
+    # Generate wrapper with the exact python3 path — no system python3 required
+    python3 = Formula["python3"].opt_bin/"python3"
+    (bin/"claude-pet").write <<~SH
+      #!/bin/bash
+      exec "#{python3}" "#{libexec}/pet.py" "$@"
+    SH
     chmod 0755, bin/"claude-pet"
   end
 
   def post_install
+    # Hook setup requires home directory access — sandboxed, so non-fatal
     system Formula["python3"].opt_bin/"python3", libexec/"setup-hooks.py", "install"
-  rescue
-    # Hook setup is non-fatal — user can run manually via caveats
+  rescue StandardError
+    # User can run: claude-pet setup
   end
 
   def caveats
     <<~EOS
       Claude Code Pet has been installed!
 
-      To finish setup, add hooks to Claude Code:
-        python3 #{libexec}/setup-hooks.py install
+      Run this to connect your pet to Claude Code:
+        claude-pet setup
 
       Usage:
         claude-pet          # watch mode (interactive)
@@ -34,8 +41,8 @@ class ClaudeCodePet < Formula
         claude-pet play     # chat with your pet
         claude-pet codex    # species codex
 
-      To remove hooks on uninstall:
-        python3 #{libexec}/setup-hooks.py uninstall
+      To remove hooks:
+        claude-pet setup uninstall
     EOS
   end
 

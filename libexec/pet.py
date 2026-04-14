@@ -2012,6 +2012,50 @@ def cmd_watch(s: dict, args: list):
 
 # ─── Main ────────────────────────────────────────────────────────────────────
 
+def _hooks_installed() -> bool:
+    """Return True if claude-pet hooks are present in ~/.claude/settings.json."""
+    cfg_path = pathlib.Path.home() / ".claude" / "settings.json"
+    if not cfg_path.exists():
+        return False
+    try:
+        cfg = json.loads(cfg_path.read_text())
+        hooks = cfg.get("hooks", {})
+        return any("claude-pet" in str(h) for event_hooks in hooks.values() for h in event_hooks)
+    except Exception:
+        return False
+
+def _do_setup(silent: bool = False) -> bool:
+    """Install hooks. Returns True if installed, False if already present."""
+    import subprocess
+    setup_candidates = [
+        pathlib.Path(__file__).parent / "setup-hooks.py",
+        pathlib.Path(__file__).parent.parent / "setup-hooks.py",
+    ]
+    setup_script = next((p for p in setup_candidates if p.exists()), None)
+    if not setup_script:
+        if not silent:
+            print(f"  {BRED}setup-hooks.py 를 찾을 수 없어요.{R}")
+        return False
+    result = subprocess.run(
+        [sys.executable, str(setup_script), "install"],
+        capture_output=True, text=True
+    )
+    if not silent:
+        print(f"  {BGREEN}{result.stdout.strip()}{R}" if result.returncode == 0
+              else f"  {BRED}{result.stderr.strip()}{R}")
+    return result.returncode == 0
+
+def cmd_setup(s: dict, args: list):
+    print_header("Claude Code Pet — 훅 설정")
+    if _hooks_installed():
+        print(f"\n  {BGREEN}✓ 훅이 이미 설치되어 있어요!{R}")
+        print(f"  {DIM}Claude Code 사용 중 자동으로 XP가 쌓여요.{R}\n")
+        return
+    print(f"\n  {BYELLOW}Claude Code 훅을 설치하면{R}")
+    print(f"  세션 시작 · 툴 사용마다 펫이 자동으로 성장해요!\n")
+    _do_setup()
+    print()
+
 COMMANDS = {
     "status":   cmd_status,
     "watch":    cmd_watch,
@@ -2022,6 +2066,7 @@ COMMANDS = {
     "play":     cmd_play,
     "rename":   cmd_rename,
     "codex":    cmd_codex,
+    "setup":    cmd_setup,
     "_hook":    cmd_hook,
 }
 
