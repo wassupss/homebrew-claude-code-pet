@@ -1202,9 +1202,22 @@ def animate_bounce(pet: dict):
     pad   = " " * max(len(l) for l in art)
 
     happy_t = {
-        "o.o": "^.^", "o   o": "^   ^", "◕     ◕": "★     ★",
-        "● . ●": "★ . ★", "o . o": "^ . ^", "O   O": "^   ^",
-        "◕_◕": "★_★", "o o": "^ ^", "O  O": "^  ^",
+        # 2-char eyes
+        "o.o": "^.^", "o~o": "^~^", "o_o": "^_^",
+        # 3-char spaced eyes
+        "o o": "^ ^", "O  O": "^  ^",
+        # 5-char spaced eyes
+        "o   o": "^   ^", "O   O": "^   ^", "o v o": "^ v ^",
+        "●   ●": "★   ★", "●   ●": "★   ★",
+        # 7-char spaced eyes
+        "o     o": "^     ^", "o . o": "^ . ^",
+        # 9-char spaced eyes (◕ variants)
+        "◕   ◕": "★   ★", "◕    ◕": "★    ★", "◕     ◕": "★     ★",
+        "◕       ◕": "★       ★",
+        "◕ . ◕": "★ . ★", "◕  ~  ◕": "★  ~  ★",
+        # special chars
+        "◕_◕": "★_★", "● . ●": "★ . ★", "● ω ●": "★ ω ★",
+        "◉     ◉": "★     ★",
     }
     happy = apply_transform(art, happy_t)
 
@@ -1741,6 +1754,8 @@ def cmd_play(s: dict, args: list):
         return
     if is_tty():
         animate_bounce(pet)
+        sys.stdout.write("\033[2J\033[H")
+        sys.stdout.flush()
     lines = SPECIES_DIALOGUE.get(pet["species"], {}).get("play", ["같이 놀아줘서 고마워!"])
     text  = random.choice(lines)
     print_speech_bubble(text, pet)
@@ -1936,6 +1951,8 @@ def _watch_run_action(pet: dict, s: dict, action: str) -> str:
         sys.stdout.write("\033[2J\033[H")
         sys.stdout.flush()
         animate_bounce(pet)
+        sys.stdout.write("\033[2J\033[H")
+        sys.stdout.flush()
         lines = SPECIES_DIALOGUE.get(pet["species"], {}).get("play", ["같이 놀아줘서 고마워!"])
         text  = random.choice(lines)
         print_speech_bubble(text, pet)
