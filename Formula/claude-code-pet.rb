@@ -1,9 +1,9 @@
 class ClaudeCodePet < Formula
   desc "CLI pet that grows with your Claude Code usage"
   homepage "https://github.com/wassupss/homebrew-claude-code-pet"
-  url "https://github.com/wassupss/homebrew-claude-code-pet/archive/refs/tags/v1.0.6.tar.gz"
-  sha256 "9a83bf1f93f3f0c45c22395e13302796abcaccc66953ba309f41c0560962b0a0"
-  version "1.0.6"
+  url "https://github.com/wassupss/homebrew-claude-code-pet/archive/refs/tags/v1.0.7.tar.gz"
+  sha256 "PLACEHOLDER"
+  version "1.0.7"
   license "MIT"
 
   depends_on "python3"
@@ -40,6 +40,7 @@ class ClaudeCodePet < Formula
         claude-pet roll     # gacha roll
         claude-pet play     # chat with your pet
         claude-pet codex    # species codex
+        claude-pet update   # update to latest version
 
       To remove hooks:
         claude-pet setup uninstall

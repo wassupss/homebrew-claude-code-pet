@@ -1773,6 +1773,29 @@ def cmd_play(s: dict, args: list):
     text  = random.choice(lines)
     print_speech_bubble(text, pet)
 
+def cmd_update(s: dict, args: list):
+    """Update claude-pet via Homebrew."""
+    import subprocess
+    print(f"\n  {DIM}최신 버전 확인 중...{R}")
+    try:
+        subprocess.run(["brew", "update"], check=True, capture_output=True)
+        result = subprocess.run(
+            ["brew", "upgrade", "claude-code-pet"],
+            capture_output=True, text=True
+        )
+        out = result.stdout + result.stderr
+        if result.returncode == 0:
+            print(f"  {BGREEN}✓ 업데이트 완료!{R}\n")
+        elif "already installed" in out or "already at the latest" in out or "up-to-date" in out:
+            print(f"  {BGREEN}✓ 이미 최신 버전이에요!{R}\n")
+        else:
+            print(f"  {BYELLOW}업데이트 중 문제가 생겼어요:{R}")
+            print(f"  {DIM}{out.strip()}{R}\n")
+    except FileNotFoundError:
+        print(f"  {BRED}Homebrew를 찾을 수 없어요.{R}\n")
+    except Exception as e:
+        print(f"  {BRED}오류: {e}{R}\n")
+
 def cmd_rename(s: dict, args: list):
     pet = active_pet(s)
     if not pet:
@@ -2110,6 +2133,7 @@ COMMANDS = {
     "select":   cmd_select,
     "play":     cmd_play,
     "rename":   cmd_rename,
+    "update":   cmd_update,
     "codex":    cmd_codex,
     "_hook":    cmd_hook,
 }
