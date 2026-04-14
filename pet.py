@@ -1962,17 +1962,39 @@ def cmd_watch(s: dict, args: list):
         frames = [apply_transform(art, t) for t in tforms]
         return frames, len(art), color
 
-    POLL = 0.08
+    POLL     = 0.08
+    STATE_PATH = STATE_FILE
 
     try:
         with RawTerminal() as term:
             frames, n, color = get_frames()
             lines_below = _watch_draw_full(pet, s)
             fi, elapsed = 0, 0.0
+            last_mtime  = STATE_PATH.stat().st_mtime if STATE_PATH.exists() else 0
 
             while True:
                 key = term.read_key(timeout=POLL)
                 elapsed += POLL
+
+                # React to hook writes — check mtime, reload only when file changed
+                try:
+                    cur_mtime = STATE_PATH.stat().st_mtime
+                except OSError:
+                    cur_mtime = last_mtime
+                if cur_mtime != last_mtime:
+                    last_mtime = cur_mtime
+                    new_s   = load_state()
+                    new_pet = active_pet(new_s)
+                    if new_pet and new_pet["id"] == pet["id"]:
+                        old_stage = get_stage(pet["species"], pet["xp"])
+                        s, pet    = new_s, new_pet
+                        new_stage = get_stage(pet["species"], pet["xp"])
+                        if new_stage != old_stage:
+                            frames, n, color = get_frames()
+                            lines_below = _watch_draw_full(pet, s, "✨ 진화!")
+                        else:
+                            lines_below = _watch_draw_full(pet, s, "✨ XP 획득!")
+                        fi = elapsed = 0
 
                 if key:
                     k = key.lower()
