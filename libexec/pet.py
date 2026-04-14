@@ -2,15 +2,15 @@
 """
 Claude Code Pet — CLI 펫 with 가챠 & 진화 시스템
 Usage:
-  pet.py                  현재 펫 상태 보기
-  pet.py roll             가챠 뽑기 (50코인)
-  pet.py list             보유 펫 목록
-  pet.py select <id>      활성 펫 변경
-  pet.py feed             먹이 주기
-  pet.py play             같이 놀기
-  pet.py rename <name>    이름 변경
-  pet.py codex            모든 펫 도감
-  pet.py _hook <event>    훅 이벤트 (내부용)
+  claude-pet                  현재 펫 상태 보기
+  claude-pet roll             가챠 뽑기 (50코인)
+  claude-pet list             보유 펫 목록
+
+
+  claude-pet play             같이 놀기
+  claude-pet rename <name>    이름 변경
+  claude-pet codex            모든 펫 도감
+  claude-pet _hook <event>    훅 이벤트 (내부용)
 """
 
 import json
@@ -1601,7 +1601,7 @@ def cmd_status(s: dict, args: list):
 
     if not pet:
         print(f"\n  {BYELLOW}아직 펫이 없어요!{R}")
-        print(f"  {DIM}`pet.py roll` 로 첫 펫을 뽑아보세요 (무료 코인 {s['coins']}개 보유){R}\n")
+        print(f"  {DIM}`claude-pet roll` 로 첫 펫을 뽑아보세요 (무료 코인 {s['coins']}개 보유){R}\n")
         return
 
     print_pet(pet, animate=is_tty())
@@ -1685,27 +1685,43 @@ def cmd_roll10(s: dict, args: list):
     save_state(s)
 
 def cmd_list(s: dict, args: list):
-    print_header(f"보유 펫 목록  ({len(s['pets'])}마리)")
+    # Deduplicate by species: keep one per species (active pet takes priority, then highest XP)
+    seen: dict[str, dict] = {}
+    for p in s["pets"]:
+        sp_key = p["species"]
+        if sp_key not in seen:
+            seen[sp_key] = p
+        else:
+            prev = seen[sp_key]
+            if p["id"] == s["active_pet_id"]:
+                seen[sp_key] = p
+            elif prev["id"] != s["active_pet_id"] and p["xp"] > prev["xp"]:
+                seen[sp_key] = p
+    unique_pets = list(seen.values())
+
+    print_header(f"보유 펫 목록  ({len(unique_pets)}종 / {len(s['pets'])}마리)")
     if not s["pets"]:
-        print(f"\n  {DIM}아직 펫이 없어요. `pet.py roll` 로 뽑아보세요!{R}\n")
+        print(f"\n  {DIM}아직 펫이 없어요. `claude-pet roll` 로 뽑아보세요!{R}\n")
         return
     print()
-    for p in s["pets"]:
+    for p in unique_pets:
         sp    = SPECIES[p["species"]]
         stage = get_stage(p["species"], p["xp"])
         sname = sp["stages"][stage]["name"]
         level = xp_to_level(p["xp"])
         rc    = RARITY_COLOR[p["rarity"]]
+        dup   = sum(1 for x in s["pets"] if x["species"] == p["species"]) - 1
+        dup_mark    = f" {DIM}(+{dup}){R}" if dup > 0 else ""
         active_mark = f" {BGREEN}◀ 활성{R}" if p["id"] == s["active_pet_id"] else ""
-        print(f"  {DIM}[{p['id']}]{R}  {sp['color']}{sp['emoji']} {B}{p['name']:<10}{R}  "
-              f"{rc}{RARITY_LABEL[p['rarity']]:<6}{R}  Lv.{level:>2}  {DIM}{sname}{R}{active_mark}")
+        print(f"  {sp['color']}{sp['emoji']} {B}{p['name']:<10}{R}  "
+              f"{rc}{RARITY_LABEL[p['rarity']]:<6}{R}  Lv.{level:>2}  {DIM}{sname}{R}{dup_mark}{active_mark}")
     print()
-    print(f"  {DIM}`pet.py select <ID>` 로 활성 펫을 변경할 수 있어요.{R}")
+    print(f"  {DIM}watch 모드([s] 키)에서 활성 펫을 교체할 수 있어요.{R}")
     print()
 
 def cmd_select(s: dict, args: list):
     if not args:
-        print(f"  {BRED}사용법: pet.py select <ID>{R}")
+        print(f"  {BRED}사용법: claude-pet select <ID>{R}")
         return
     pid = args[0]
     matches = [p for p in s["pets"] if p["id"].startswith(pid)]
@@ -1735,7 +1751,7 @@ def cmd_rename(s: dict, args: list):
         print(f"  {BRED}활성 펫이 없어요.{R}")
         return
     if not args:
-        print(f"  {BRED}사용법: pet.py rename <이름>{R}")
+        print(f"  {BRED}사용법: claude-pet rename <이름>{R}")
         return
     new_name = " ".join(args)
     old_name = pet["name"]
@@ -1860,7 +1876,7 @@ def cmd_hook(s: dict, args: list):
 # ─── Watch Mode ──────────────────────────────────────────────────────────────
 
 _WATCH_LEGEND = (
-    f"  [p]놀기  [r]뽑기  [l]목록  [c]도감  [q]종료"
+    f"  [p]놀기  [s]교체  [r]뽑기  [l]목록  [c]도감  [q]종료"
 )
 _WATCH_LINES_BELOW = 8  # lines printed after the art block (blank+stats×3+blank+msg+blank+legend)
 
@@ -1933,7 +1949,7 @@ def cmd_watch(s: dict, args: list):
     pet = active_pet(s)
     if not pet:
         print(f"\n  {BYELLOW}아직 펫이 없어요!{R}")
-        print(f"  {DIM}`pet.py roll` 로 첫 펫을 뽑아보세요 (보유 코인: {s['coins']}){R}\n")
+        print(f"  {DIM}`claude-pet roll` 로 첫 펫을 뽑아보세요 (보유 코인: {s['coins']}){R}\n")
         return
 
     sp = SPECIES[pet["species"]]
@@ -1967,6 +1983,27 @@ def cmd_watch(s: dict, args: list):
                     elif k == 'p':
                         _watch_run_action(pet, s, "play")
                         lines_below = _watch_draw_full(pet, s)
+                        fi = elapsed = 0
+
+                    elif k == 's':
+                        # Cycle active pet (unique species only)
+                        seen_sp: set = set()
+                        unique: list = []
+                        for p in s["pets"]:
+                            if p["species"] not in seen_sp:
+                                seen_sp.add(p["species"])
+                                unique.append(p)
+                        if len(unique) <= 1:
+                            lines_below = _watch_draw_full(pet, s, "보유 펫이 하나뿐이에요.")
+                        else:
+                            cur_idx = next((i for i, p in enumerate(unique) if p["id"] == s["active_pet_id"]), 0)
+                            nxt = unique[(cur_idx + 1) % len(unique)]
+                            s["active_pet_id"] = nxt["id"]
+                            save_state(s)
+                            s = load_state(); pet = active_pet(s)
+                            sp = SPECIES[pet["species"]]
+                            frames, n, color = get_frames()
+                            lines_below = _watch_draw_full(pet, s, f"{sp['emoji']} {pet['name']}으로 교체!")
                         fi = elapsed = 0
 
                     elif k == 'r':
