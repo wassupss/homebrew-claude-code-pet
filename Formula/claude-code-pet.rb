@@ -2,7 +2,7 @@ class ClaudeCodePet < Formula
   desc "CLI pet that grows with your Claude Code usage"
   homepage "https://github.com/wassupss/homebrew-claude-code-pet"
   url "https://github.com/wassupss/homebrew-claude-code-pet/archive/refs/tags/v1.0.2.tar.gz"
-  sha256 "PLACEHOLDER"
+  sha256 "c20696728afc7d61c3abf73924795141237fdafa6f4249c3abcd195bec76468e"
   version "1.0.2"
   license "MIT"
 
