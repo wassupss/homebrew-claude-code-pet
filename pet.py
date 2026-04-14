@@ -55,26 +55,26 @@ SPECIES = {
         "color": BWHITE,
         "desc": "우아하고 독립적인 고양이. 묘한 매력이 있어요.",
         "stages": [
-            {"name": "아기 고양이", "min_xp": 0, "art": [
+            {"name": "아기 고양이", "min_level": 0, "art": [
                 r"  /\ /\  ",
                 r" ( >.< ) ",
                 r"  > ω <  ",
                 r" (_____) ",
             ]},
-            {"name": "꼬마 고양이", "min_xp": 300, "art": [
+            {"name": "꼬마 고양이", "min_level": 10, "art": [
                 r"  /\_/\  ",
                 r" ( ^.^ ) ",
                 r"  > ^ <  ",
                 r" (_)(_)  ",
             ]},
-            {"name": "고양이", "min_xp": 800, "art": [
+            {"name": "고양이", "min_level": 20, "art": [
                 r"  /\_/\   ",
                 r" ( o   o )",
                 r" (  =^=  )",
                 r"  \___/   ",
                 r"  || ||   ",
             ]},
-            {"name": "어른 고양이", "min_xp": 2000, "art": [
+            {"name": "어른 고양이", "min_level": 30, "art": [
                 r" /\_____/\ ",
                 r"(  o     o )",
                 r"(  = ^ =  )",
@@ -82,7 +82,7 @@ SPECIES = {
                 r"  \_____/  ",
                 r"  ||   ||  ",
             ]},
-            {"name": "현명한 고양이", "min_xp": 4000, "art": [
+            {"name": "현명한 고양이", "min_level": 40, "art": [
                 r"  /\_____/\  ",
                 r" ( o       o )",
                 r"/|  = ^ =  |\ ",
@@ -90,7 +90,7 @@ SPECIES = {
                 r" \|_________|/ ",
                 r"  (_)     (_)  ",
             ]},
-            {"name": "전설의 고양이 ✦", "min_xp": 7000, "art": [
+            {"name": "전설의 고양이 ✦", "min_level": 50, "art": [
                 r"✦ /\_____/\ ✦",
                 r" ( ★     ★ ) ",
                 r"/|  = ^ =  |\ ",
@@ -108,26 +108,26 @@ SPECIES = {
         "color": BRED,
         "desc": "고대의 힘을 가진 전설의 드래곤. 매우 희귀해요!",
         "stages": [
-            {"name": "드래곤 알", "min_xp": 0, "art": [
+            {"name": "드래곤 알", "min_level": 0, "art": [
                 r"  .~~~.  ",
                 r" ( . . ) ",
                 r" [ ~~~ ] ",
                 r"  `---'  ",
             ]},
-            {"name": "아기 드래곤", "min_xp": 300, "art": [
+            {"name": "아기 드래곤", "min_level": 10, "art": [
                 r"  /\ /\  ",
                 r" (o v o) ",
                 r" ( ^ ^ ) ",
                 r" /|___|\ ",
             ]},
-            {"name": "어린 드래곤", "min_xp": 800, "art": [
+            {"name": "어린 드래곤", "min_level": 20, "art": [
                 r"   /\ /\   ",
                 r"  ( o~o )  ",
                 r" <(  ^  )> ",
                 r"  (\\==//)  ",
                 r"   ~~ ~~   ",
             ]},
-            {"name": "드래곤", "min_xp": 2000, "art": [
+            {"name": "드래곤", "min_level": 30, "art": [
                 r"  , . . ,  ",
                 r" (◕  ~  ◕) ",
                 r"<(  ===  )>",
@@ -135,7 +135,7 @@ SPECIES = {
                 r" // \\ //  ",
                 r"~~  ~~~  ~~",
             ]},
-            {"name": "고대 드래곤", "min_xp": 4000, "art": [
+            {"name": "고대 드래곤", "min_level": 40, "art": [
                 r"  ,~~~~~,   ",
                 r" (★  ~  ★) ",
                 r"<( ===== )> ",
@@ -143,7 +143,7 @@ SPECIES = {
                 r" //  |||  \\",
                 r"~~  ~~~~~  ~~",
             ]},
-            {"name": "신화의 드래곤 ✦", "min_xp": 7000, "art": [
+            {"name": "신화의 드래곤 ✦", "min_level": 50, "art": [
                 r"✦ ,~~~~~, ✦",
                 r" (★  ~  ★) ",
                 r"✦<(=====)>✦",
@@ -161,25 +161,25 @@ SPECIES = {
         "color": BBLUE,
         "desc": "코딩을 사랑하는 귀여운 펭귄. Linux의 마스코트 친구!",
         "stages": [
-            {"name": "펭귄 알", "min_xp": 0, "art": [
+            {"name": "펭귄 알", "min_level": 0, "art": [
                 r" /~~~~~\ ",
                 r"|  ( )  |",
                 r" \_____/ ",
             ]},
-            {"name": "아기 펭귄", "min_xp": 300, "art": [
+            {"name": "아기 펭귄", "min_level": 10, "art": [
                 r"  .---.  ",
                 r" (o   o) ",
                 r" ( > < ) ",
                 r"  `---'  ",
             ]},
-            {"name": "꼬마 펭귄", "min_xp": 800, "art": [
+            {"name": "꼬마 펭귄", "min_level": 20, "art": [
                 r"  .----.  ",
                 r" ( O  O ) ",
                 r" ( >--< ) ",
                 r"  )    (  ",
                 r" (______) ",
             ]},
-            {"name": "펭귄", "min_xp": 2000, "art": [
+            {"name": "펭귄", "min_level": 30, "art": [
                 r"  .------. ",
                 r" ( ◕    ◕ )",
                 r" (  >--<  )",
@@ -187,7 +187,7 @@ SPECIES = {
                 r" /  ~~~~  \\",
                 r"(__________)",
             ]},
-            {"name": "노련한 펭귄", "min_xp": 4000, "art": [
+            {"name": "노련한 펭귄", "min_level": 40, "art": [
                 r"   .-------.  ",
                 r"  ( ◕     ◕ ) ",
                 r"  (  >---<  ) ",
@@ -196,7 +196,7 @@ SPECIES = {
                 r" (__________)  ",
                 r"  (__)  (__) ",
             ]},
-            {"name": "황제 펭귄 ✦", "min_xp": 7000, "art": [
+            {"name": "황제 펭귄 ✦", "min_level": 50, "art": [
                 r"✦  .-------.  ✦",
                 r"  ( ★     ★ )  ",
                 r"  (  >---<  )  ",
@@ -215,19 +215,19 @@ SPECIES = {
         "color": BCYAN,
         "desc": "AI와 함께 진화하는 하이테크 로봇. 클로드의 절친!",
         "stages": [
-            {"name": "로봇 부품", "min_xp": 0, "art": [
+            {"name": "로봇 부품", "min_level": 0, "art": [
                 r" [_____] ",
                 r" | o_o | ",
                 r" [_____] ",
             ]},
-            {"name": "미니 로봇", "min_xp": 300, "art": [
+            {"name": "미니 로봇", "min_level": 10, "art": [
                 r"  [===]  ",
                 r" [o   o] ",
                 r"  [ - ]  ",
                 r"  [___]  ",
                 r"  | | |  ",
             ]},
-            {"name": "로봇", "min_xp": 800, "art": [
+            {"name": "로봇", "min_level": 20, "art": [
                 r"  [=====]  ",
                 r" [◉     ◉] ",
                 r" [  ---  ] ",
@@ -235,7 +235,7 @@ SPECIES = {
                 r"  |  |  |  ",
                 r" [=] | [=] ",
             ]},
-            {"name": "어드밴스드 로봇", "min_xp": 2000, "art": [
+            {"name": "어드밴스드 로봇", "min_level": 30, "art": [
                 r"   [=====]   ",
                 r"  [◉     ◉]  ",
                 r"  [  ~~~  ]  ",
@@ -244,7 +244,7 @@ SPECIES = {
                 r"   |  |  |   ",
                 r"  [=] | [=]  ",
             ]},
-            {"name": "사이버 로봇", "min_xp": 4000, "art": [
+            {"name": "사이버 로봇", "min_level": 40, "art": [
                 r"    [=======]    ",
                 r"   [★       ★]   ",
                 r"   [  ~~~~~  ]   ",
@@ -253,7 +253,7 @@ SPECIES = {
                 r"   |    |    |   ",
                 r"  [==]  |  [==]  ",
             ]},
-            {"name": "ULTRA 로봇 ✦", "min_xp": 7000, "art": [
+            {"name": "ULTRA 로봇 ✦", "min_level": 50, "art": [
                 r"✦  [=======]  ✦",
                 r"   [★       ★]  ",
                 r"✦  [  ~~~~~  ] ✦",
@@ -272,27 +272,27 @@ SPECIES = {
         "color": BYELLOW,
         "desc": "영리하고 민첩한 여우. 비밀이 많아 보여요.",
         "stages": [
-            {"name": "아기 여우", "min_xp": 0, "art": [
+            {"name": "아기 여우", "min_level": 0, "art": [
                 r" /\ /\ ",
                 r"(^. .^)",
                 r" (> <) ",
                 r" (___)  ",
             ]},
-            {"name": "꼬마 여우", "min_xp": 300, "art": [
+            {"name": "꼬마 여우", "min_level": 10, "art": [
                 r" /\   /\ ",
                 r"( o . o )",
                 r" ( ^ ^ ) ",
                 r"  (___)  ",
                 r"  |   |  ",
             ]},
-            {"name": "여우", "min_xp": 800, "art": [
+            {"name": "여우", "min_level": 20, "art": [
                 r" /\     /\ ",
                 r"( ◕ . ◕  )",
                 r" (   ^   ) ",
                 r"  \_____/  ",
                 r"  //   \\  ",
             ]},
-            {"name": "현명한 여우", "min_xp": 2000, "art": [
+            {"name": "현명한 여우", "min_level": 30, "art": [
                 r" /\       /\ ",
                 r"( ◕     ◕  ) ",
                 r" (   ~~~   ) ",
@@ -300,7 +300,7 @@ SPECIES = {
                 r"  /  ~~~  \\ ",
                 r" // ~~~~~ \\\\",
             ]},
-            {"name": "구미호 (8꼬리)", "min_xp": 4000, "art": [
+            {"name": "구미호 (8꼬리)", "min_level": 40, "art": [
                 r" /\         /\ ",
                 r"( ★       ★  ) ",
                 r" (   ~~~~~   ) ",
@@ -309,7 +309,7 @@ SPECIES = {
                 r" ~~ ~~~~~~~ ~~ ",
                 r"  ~ ~~~~~~~ ~  ",
             ]},
-            {"name": "구미호 전설 ✦", "min_xp": 7000, "art": [
+            {"name": "구미호 전설 ✦", "min_level": 50, "art": [
                 r"✦/\         /\✦",
                 r" ( ★       ★ ) ",
                 r"✦(   ~~~~~   )✦",
@@ -328,25 +328,25 @@ SPECIES = {
         "color": BGREEN,
         "desc": "말랑말랑한 슬라임. 느리지만 꾸준히 성장해요.",
         "stages": [
-            {"name": "작은 슬라임", "min_xp": 0, "art": [
+            {"name": "작은 슬라임", "min_level": 0, "art": [
                 r"  ~~~  ",
                 r" (o_o) ",
                 r"  ~~~  ",
             ]},
-            {"name": "슬라임", "min_xp": 300, "art": [
+            {"name": "슬라임", "min_level": 10, "art": [
                 r"  ~~~~~  ",
                 r" ( o o ) ",
                 r" ( ___ ) ",
                 r"  ~~~~~  ",
             ]},
-            {"name": "젤리 슬라임", "min_xp": 800, "art": [
+            {"name": "젤리 슬라임", "min_level": 20, "art": [
                 r"  ~~~~~~~  ",
                 r" ( ◕   ◕ ) ",
                 r" (  ~~~  ) ",
                 r"  ~~~~~~~  ",
                 r"   ~~~~~   ",
             ]},
-            {"name": "킹 슬라임", "min_xp": 2000, "art": [
+            {"name": "킹 슬라임", "min_level": 30, "art": [
                 r"    ~~†~~    ",
                 r"  (~~~~~~~~~)",
                 r" ( ◕     ◕  )",
@@ -354,7 +354,7 @@ SPECIES = {
                 r"  (~~~~~~~~) ",
                 r"   ~~~~~~~~~  ",
             ]},
-            {"name": "크리스탈 슬라임", "min_xp": 4000, "art": [
+            {"name": "크리스탈 슬라임", "min_level": 40, "art": [
                 r"   ~~†~~†~~   ",
                 r"  (~~~~~~~~~~)",
                 r" ( ★       ★  )",
@@ -362,7 +362,7 @@ SPECIES = {
                 r"  (~~~~~~~~~) ",
                 r"   ~~~~~~~~~  ",
             ]},
-            {"name": "신성 슬라임 ✦", "min_xp": 7000, "art": [
+            {"name": "신성 슬라임 ✦", "min_level": 50, "art": [
                 r"✦  ~~†~~†~~  ✦",
                 r"  (~~~~~~~~~~) ",
                 r"✦( ★       ★ )✦",
@@ -380,27 +380,27 @@ SPECIES = {
         "color": BMAGENTA,
         "desc": "어둠 속의 신비로운 유령. 밤에 더 강해져요.",
         "stages": [
-            {"name": "작은 유령", "min_xp": 0, "art": [
+            {"name": "작은 유령", "min_level": 0, "art": [
                 r"  .---.  ",
                 r" (o   o) ",
                 r"  \ ~ /  ",
                 r"  /\ /\  ",
             ]},
-            {"name": "유령", "min_xp": 300, "art": [
+            {"name": "유령", "min_level": 10, "art": [
                 r"  .-----.  ",
                 r" ( o   o ) ",
                 r" (  ~~~  ) ",
                 r"  \_____/  ",
                 r"  /|   |\  ",
             ]},
-            {"name": "무서운 유령", "min_xp": 800, "art": [
+            {"name": "무서운 유령", "min_level": 20, "art": [
                 r"   .-------.  ",
                 r"  ( ◕     ◕ ) ",
                 r"  (  ~~~~~  ) ",
                 r"   \_______/  ",
                 r"   /| | | |\  ",
             ]},
-            {"name": "망령", "min_xp": 2000, "art": [
+            {"name": "망령", "min_level": 30, "art": [
                 r"   .---------.  ",
                 r"  (  ◕     ◕  ) ",
                 r"  (   ~~~~~   ) ",
@@ -408,7 +408,7 @@ SPECIES = {
                 r"   /|  | |  |\  ",
                 r"  ~ ~  ~ ~  ~ ~ ",
             ]},
-            {"name": "원령", "min_xp": 4000, "art": [
+            {"name": "원령", "min_level": 40, "art": [
                 r"  .-----------.  ",
                 r" ( ★         ★ ) ",
                 r" (   ~~~~~~~   ) ",
@@ -416,7 +416,7 @@ SPECIES = {
                 r"  /| |  |  | |\ ",
                 r" ~~ ~~ ~~~ ~~ ~~ ",
             ]},
-            {"name": "공포의 왕 ✦", "min_xp": 7000, "art": [
+            {"name": "공포의 왕 ✦", "min_level": 50, "art": [
                 r"✦.-----------.✦",
                 r" ( ★         ★ )",
                 r"✦(   ~~~~~~~   )✦",
@@ -435,27 +435,27 @@ SPECIES = {
         "color": BYELLOW,
         "desc": "든든하고 포근한 곰. 힘이 세고 믿음직해요.",
         "stages": [
-            {"name": "아기 곰", "min_xp": 0, "art": [
+            {"name": "아기 곰", "min_level": 0, "art": [
                 r"  /\ /\  ",
                 r" (● . ●) ",
                 r"  (u u)  ",
                 r"  (___)  ",
             ]},
-            {"name": "꼬마 곰", "min_xp": 300, "art": [
+            {"name": "꼬마 곰", "min_level": 10, "art": [
                 r"  /\ /\  ",
                 r" (● ω ●) ",
                 r" ( u u ) ",
                 r" (_____)  ",
                 r"  || ||  ",
             ]},
-            {"name": "곰", "min_xp": 800, "art": [
+            {"name": "곰", "min_level": 20, "art": [
                 r"  /\___/\  ",
                 r" ( ●   ● ) ",
                 r" (  u u  ) ",
                 r"  \_____/  ",
                 r"  ||   ||  ",
             ]},
-            {"name": "어른 곰", "min_xp": 2000, "art": [
+            {"name": "어른 곰", "min_level": 30, "art": [
                 r"  /\_____/\  ",
                 r" (  ●     ●  )",
                 r" (  u   u  ) ",
@@ -463,7 +463,7 @@ SPECIES = {
                 r"   \_____/   ",
                 r"   ||   ||   ",
             ]},
-            {"name": "왕 곰", "min_xp": 4000, "art": [
+            {"name": "왕 곰", "min_level": 40, "art": [
                 r"   /\_____/\   ",
                 r"  ( ◕     ◕ )  ",
                 r" /|  u   u  |\ ",
@@ -471,7 +471,7 @@ SPECIES = {
                 r" \|_________|/ ",
                 r"  (__)   (__)  ",
             ]},
-            {"name": "전설의 곰 ✦", "min_xp": 7000, "art": [
+            {"name": "전설의 곰 ✦", "min_level": 50, "art": [
                 r"✦  /\_____/\  ✦",
                 r"  ( ★     ★ )  ",
                 r" /|  u   u  |\ ",
@@ -489,20 +489,20 @@ SPECIES = {
         "color": BGREEN,
         "desc": "개구쟁이 개구리. 점프력이 대단하고 노래를 좋아해요!",
         "stages": [
-            {"name": "올챙이", "min_xp": 0, "art": [
+            {"name": "올챙이", "min_level": 0, "art": [
                 r"  .---.  ",
                 r" ( o o ) ",
                 r"  ( ^ )  ",
                 r"   ~~~   ",
             ]},
-            {"name": "아기 개구리", "min_xp": 300, "art": [
+            {"name": "아기 개구리", "min_level": 10, "art": [
                 r"  .-----.  ",
                 r" ( O   O ) ",
                 r" (  ~~~  ) ",
                 r"  `-----'  ",
                 r"  /     \  ",
             ]},
-            {"name": "개구리", "min_xp": 800, "art": [
+            {"name": "개구리", "min_level": 20, "art": [
                 r"  .-------.  ",
                 r" ( ◕     ◕ ) ",
                 r" (  ~~~~~  ) ",
@@ -510,7 +510,7 @@ SPECIES = {
                 r"  |       |  ",
                 r" =|=     =|= ",
             ]},
-            {"name": "점프왕 개구리", "min_xp": 2000, "art": [
+            {"name": "점프왕 개구리", "min_level": 30, "art": [
                 r"  .---------.  ",
                 r" (  ◕     ◕  ) ",
                 r" (   ~~~~~   ) ",
@@ -519,7 +519,7 @@ SPECIES = {
                 r" =|=       =|= ",
                 r"  ~         ~  ",
             ]},
-            {"name": "개구리 대왕", "min_xp": 4000, "art": [
+            {"name": "개구리 대왕", "min_level": 40, "art": [
                 r"  .-----------.  ",
                 r" ( ★         ★ ) ",
                 r"/(  ~~~~~~~~~  )\ ",
@@ -528,7 +528,7 @@ SPECIES = {
                 r"  =|=         =|= ",
                 r"   ~~         ~~  ",
             ]},
-            {"name": "전설의 개구리 ✦", "min_xp": 7000, "art": [
+            {"name": "전설의 개구리 ✦", "min_level": 50, "art": [
                 r"✦.-----------.✦",
                 r" ( ★         ★ )",
                 r"✦/(~~~~~~~~~)\✦",
@@ -547,25 +547,25 @@ SPECIES = {
         "color": BMAGENTA,
         "desc": "봄의 요정. 꽃을 피우며 자라고 주변을 밝게 해줘요.",
         "stages": [
-            {"name": "씨앗", "min_xp": 0, "art": [
+            {"name": "씨앗", "min_level": 0, "art": [
                 r"  .~~~.  ",
                 r" (  .  ) ",
                 r"  `~~~'  ",
             ]},
-            {"name": "새싹 요정", "min_xp": 300, "art": [
+            {"name": "새싹 요정", "min_level": 10, "art": [
                 r"   ✿✿✿   ",
                 r"  (o . o) ",
                 r"   \|||/  ",
                 r"   (___) ",
             ]},
-            {"name": "꽃 요정", "min_xp": 800, "art": [
+            {"name": "꽃 요정", "min_level": 20, "art": [
                 r"  ✿(◕_◕)✿  ",
                 r"   \  |  /  ",
                 r"    \_|_/   ",
                 r"   (_____)  ",
                 r"   // \\    ",
             ]},
-            {"name": "꽃의 수호자", "min_xp": 2000, "art": [
+            {"name": "꽃의 수호자", "min_level": 30, "art": [
                 r" ✿✿(◕_◕)✿✿ ",
                 r"   ~~| |~~  ",
                 r"    _| |_   ",
@@ -573,7 +573,7 @@ SPECIES = {
                 r"  ~~     ~~ ",
                 r"  ~       ~ ",
             ]},
-            {"name": "꽃의 여왕", "min_xp": 4000, "art": [
+            {"name": "꽃의 여왕", "min_level": 40, "art": [
                 r"✿✿✿(★_★)✿✿✿",
                 r"  ~~~| |~~~  ",
                 r"     | |     ",
@@ -582,7 +582,7 @@ SPECIES = {
                 r"  ~~~   ~~~  ",
                 r"  ~       ~  ",
             ]},
-            {"name": "전설의 꽃요정 ✦", "min_xp": 7000, "art": [
+            {"name": "전설의 꽃요정 ✦", "min_level": 50, "art": [
                 r"✦✿✿(★_★)✿✿✦",
                 r" ✦~~| |~~✦  ",
                 r"     | |     ",
@@ -601,27 +601,27 @@ SPECIES = {
         "color": BYELLOW,
         "desc": "백수의 왕. 당당하고 용감해요. 갈기가 멋져요!",
         "stages": [
-            {"name": "아기 사자", "min_xp": 0, "art": [
+            {"name": "아기 사자", "min_level": 0, "art": [
                 r" /\ /\ ",
                 r"(^. .^)",
                 r" (www) ",
                 r" (___)  ",
             ]},
-            {"name": "꼬마 사자", "min_xp": 300, "art": [
+            {"name": "꼬마 사자", "min_level": 10, "art": [
                 r"  /\ /\  ",
                 r" (o   o) ",
                 r" ( www ) ",
                 r"  (___)  ",
                 r"  |   |  ",
             ]},
-            {"name": "사자", "min_xp": 800, "art": [
+            {"name": "사자", "min_level": 20, "art": [
                 r" /\~~~~~/ \ ",
                 r"(  o     o  )",
                 r"(  wwwwwww  )",
                 r" \__________/",
                 r"  ||      || ",
             ]},
-            {"name": "어른 사자", "min_xp": 2000, "art": [
+            {"name": "어른 사자", "min_level": 30, "art": [
                 r"  /\~~~~~~~/ \ ",
                 r" (  ◕       ◕  )",
                 r" (  wwwwwwwww  )",
@@ -629,7 +629,7 @@ SPECIES = {
                 r"   ||        || ",
                 r"   ~          ~ ",
             ]},
-            {"name": "사자 왕", "min_xp": 4000, "art": [
+            {"name": "사자 왕", "min_level": 40, "art": [
                 r"  /\~~~~~~~~~/ \  ",
                 r" (  ★         ★  )",
                 r" (  wwwwwwwwwww  )",
@@ -637,7 +637,7 @@ SPECIES = {
                 r" /|              |\ ",
                 r"(__)            (__)",
             ]},
-            {"name": "전설의 사자 ✦", "min_xp": 7000, "art": [
+            {"name": "전설의 사자 ✦", "min_level": 50, "art": [
                 r"✦/\~~~~~~~~~/ \✦",
                 r" (  ★         ★  )",
                 r"✦( wwwwwwwwwww )✦",
@@ -655,25 +655,25 @@ SPECIES = {
         "color": BCYAN,
         "desc": "신비로운 물의 정령. 흐르듯 우아하고 강력해요.",
         "stages": [
-            {"name": "물방울", "min_xp": 0, "art": [
+            {"name": "물방울", "min_level": 0, "art": [
                 r"  ~~~  ",
                 r" (o.o) ",
                 r"  ~~~  ",
             ]},
-            {"name": "물 정령", "min_xp": 300, "art": [
+            {"name": "물 정령", "min_level": 10, "art": [
                 r"  ~~~~~  ",
                 r" ( o o ) ",
                 r" ( ~~~ ) ",
                 r"  ~~~~~  ",
             ]},
-            {"name": "강의 수호자", "min_xp": 800, "art": [
+            {"name": "강의 수호자", "min_level": 20, "art": [
                 r"  ~~~~~~~  ",
                 r" ( ◕   ◕ ) ",
                 r" (  ~~~  ) ",
                 r"  ~~~~~~~~~",
                 r"   ~~~~~~~  ",
             ]},
-            {"name": "바다 정령", "min_xp": 2000, "art": [
+            {"name": "바다 정령", "min_level": 30, "art": [
                 r"  ~~~~~~~~~  ",
                 r" (  ◕     ◕  )",
                 r" (   ~~~~~   )",
@@ -681,7 +681,7 @@ SPECIES = {
                 r"  /  ~~~~~  \ ",
                 r" ~~~~~~~~~~~~",
             ]},
-            {"name": "대양의 왕", "min_xp": 4000, "art": [
+            {"name": "대양의 왕", "min_level": 40, "art": [
                 r"   ~~~~~~~~~~~   ",
                 r"  ( ★         ★ ) ",
                 r" /( ~~~~~~~~~~~ )\ ",
@@ -689,7 +689,7 @@ SPECIES = {
                 r" \~~~~~~~~~~~~~~~/ ",
                 r"   ~~~~~~~~~~~   ",
             ]},
-            {"name": "전설의 물정령 ✦", "min_xp": 7000, "art": [
+            {"name": "전설의 물정령 ✦", "min_level": 50, "art": [
                 r"✦  ~~~~~~~~~~~  ✦",
                 r"  ( ★         ★ ) ",
                 r"✦/( ~~~~~~~~~~~ )\✦",
@@ -707,27 +707,27 @@ SPECIES = {
         "color": BMAGENTA,
         "desc": "천재적인 문어. 팔이 여덟 개라 멀티태스킹 최강!",
         "stages": [
-            {"name": "아기 문어", "min_xp": 0, "art": [
+            {"name": "아기 문어", "min_level": 0, "art": [
                 r"  .---.  ",
                 r" ( o o ) ",
                 r"  -----  ",
                 r"  / | \  ",
             ]},
-            {"name": "문어", "min_xp": 300, "art": [
+            {"name": "문어", "min_level": 10, "art": [
                 r"   .-----.   ",
                 r"  ( o   o )  ",
                 r"   -------   ",
                 r"  / /|\ \  ",
                 r" ~  ~ ~ ~  ~ ",
             ]},
-            {"name": "팔다리 문어", "min_xp": 800, "art": [
+            {"name": "팔다리 문어", "min_level": 20, "art": [
                 r"   .-------.   ",
                 r"  ( ◕     ◕ )  ",
                 r"   ---------   ",
                 r"  /|/ | \ |\  ",
                 r" ~ ~ ~ ~ ~ ~ ~ ",
             ]},
-            {"name": "심해 문어", "min_xp": 2000, "art": [
+            {"name": "심해 문어", "min_level": 30, "art": [
                 r"   .---------.   ",
                 r"  (  ◕     ◕  )  ",
                 r"   -----------   ",
@@ -735,7 +735,7 @@ SPECIES = {
                 r" ~~ ~~ ~ ~ ~~ ~~ ",
                 r"  ~  ~  ~  ~  ~  ",
             ]},
-            {"name": "대왕 문어", "min_xp": 4000, "art": [
+            {"name": "대왕 문어", "min_level": 40, "art": [
                 r"   .-----------.   ",
                 r"  ( ★           ★ ) ",
                 r"   -------------   ",
@@ -743,7 +743,7 @@ SPECIES = {
                 r" ~~~ ~~~ ~ ~~~ ~~~ ",
                 r" ~~  ~~  ~ ~~  ~~  ",
             ]},
-            {"name": "전설의 문어 ✦", "min_xp": 7000, "art": [
+            {"name": "전설의 문어 ✦", "min_level": 50, "art": [
                 r"✦ .-----------.  ✦",
                 r"  ( ★           ★ )",
                 r"✦  -------------  ✦",
@@ -761,20 +761,20 @@ SPECIES = {
         "color": BMAGENTA,
         "desc": "순수한 마법의 유니콘. 전설 중의 전설! 극히 희귀해요.",
         "stages": [
-            {"name": "아기 유니콘", "min_xp": 0, "art": [
+            {"name": "아기 유니콘", "min_level": 0, "art": [
                 r"  /\ /\  ",
                 r" ( ^.^ ) ",
                 r"  (/|\)  ",
                 r"  (___)  ",
             ]},
-            {"name": "꼬마 유니콘", "min_xp": 300, "art": [
+            {"name": "꼬마 유니콘", "min_level": 10, "art": [
                 r"   *     ",
                 r"  /\ /\  ",
                 r" ( o . o )",
                 r"  ( /|\ ) ",
                 r"  (_____) ",
             ]},
-            {"name": "유니콘", "min_xp": 800, "art": [
+            {"name": "유니콘", "min_level": 20, "art": [
                 r"   ✦     ",
                 r"  /\___/\ ",
                 r" ( ◕   ◕ )",
@@ -782,7 +782,7 @@ SPECIES = {
                 r"   \____/ ",
                 r"   || ||  ",
             ]},
-            {"name": "무지개 유니콘", "min_xp": 2000, "art": [
+            {"name": "무지개 유니콘", "min_level": 30, "art": [
                 r"   ✦ ✦   ",
                 r"  /\___/\ ",
                 r" ( ◕   ◕ )",
@@ -791,7 +791,7 @@ SPECIES = {
                 r"  // \\  ",
                 r"  ~   ~  ",
             ]},
-            {"name": "별의 유니콘", "min_xp": 4000, "art": [
+            {"name": "별의 유니콘", "min_level": 40, "art": [
                 r"  ✦ ★ ✦  ",
                 r"  /\___/\ ",
                 r" ( ★     ★ )",
@@ -800,7 +800,7 @@ SPECIES = {
                 r"  // \\ // ",
                 r"  ~  ~  ~  ",
             ]},
-            {"name": "전설의 유니콘 ✦", "min_xp": 7000, "art": [
+            {"name": "전설의 유니콘 ✦", "min_level": 50, "art": [
                 r"✦ ✦ ★ ✦ ✦",
                 r"  /\___/\  ",
                 r"✦( ★     ★ )✦",
@@ -819,26 +819,26 @@ SPECIES = {
         "color": "\033[38;5;196m",
         "desc": "존재 자체가 금기. 어둠과 불꽃을 다스리는 절대자.",
         "stages": [
-            {"name": "봉인된 핵", "min_xp": 0, "art": [
+            {"name": "봉인된 핵", "min_level": 0, "art": [
                 r"  ░▒▓▓▒░  ",
                 r" ░(x . x)░",
                 r" ▒[ ─── ]▒",
                 r"  ░`---'░  ",
             ]},
-            {"name": "봉인 해제", "min_xp": 300, "art": [
+            {"name": "봉인 해제", "min_level": 10, "art": [
                 r"  ▀▄ ▄▀  ",
                 r" ▒(X v X)▒",
                 r" ▓( ─ ─ )▓",
                 r" ▒/|▓▓▓|\▒",
             ]},
-            {"name": "흑염 각성", "min_xp": 800, "art": [
+            {"name": "흑염 각성", "min_level": 20, "art": [
                 r"  ▓▀▄ ▄▀▓  ",
                 r" ▒(X ═ X)▒ ",
                 r"▓<( ─── )>▓",
                 r" ▒(\\▓▓▓//)▒",
                 r"  ▀▓═══▓▀  ",
             ]},
-            {"name": "흑염룡", "min_xp": 2000, "art": [
+            {"name": "흑염룡", "min_level": 30, "art": [
                 r" ▓▀▀▀ ▀▀▀▓ ",
                 r"▒(X  ═  X)▒",
                 r"▓<( ═════ )>▓",
@@ -846,7 +846,7 @@ SPECIES = {
                 r"▓▓// \\// \\▓▓",
                 r"░▓ ░░░░░ ▓░",
             ]},
-            {"name": "절대 흑염룡", "min_xp": 4000, "art": [
+            {"name": "절대 흑염룡", "min_level": 40, "art": [
                 r"▓▀~~▀▀▀▀~~▀▓",
                 r"▒(X  ═  X)▒ ",
                 r"▓<(═══════)>▓",
@@ -854,7 +854,7 @@ SPECIES = {
                 r"▓▓// ||| \\▓▓",
                 r"░▓~░░░░░░░~▓░",
             ]},
-            {"name": "흑염룡 ── 완전체", "min_xp": 7000, "art": [
+            {"name": "흑염룡 ── 완전체", "min_level": 50, "art": [
                 r"▓✦▓▀~~~~~▀▓✦▓",
                 r"  ▒(X  ═  X)▒ ",
                 r"▓✦<(═══════)>✦▓",
@@ -1390,10 +1390,11 @@ def save_state(s: dict):
         json.dump(s, f, ensure_ascii=False, indent=2)
 
 def get_stage(species_key: str, xp: float) -> int:
+    level  = xp_to_level(xp)
     stages = SPECIES[species_key]["stages"]
-    stage = 0
+    stage  = 0
     for i, s in enumerate(stages):
-        if xp >= s["min_xp"]:
+        if level >= s["min_level"]:
             stage = i
     return stage
 
@@ -1417,11 +1418,17 @@ def xp_to_level(xp: float) -> int:
     import math
     return min(50, int(math.sqrt(max(0, xp) / 5)) + 1)
 
-def xp_for_next_stage(species_key: str, xp: float) -> float | None:
+def level_to_xp(level: int) -> int:
+    """XP required to reach this level."""
+    return (level - 1) ** 2 * 5
+
+def next_evo_level(species_key: str, xp: float) -> int | None:
+    """Return the min_level of the next evolution stage, or None if max."""
+    level  = xp_to_level(xp)
     stages = SPECIES[species_key]["stages"]
     for s in stages:
-        if xp < s["min_xp"]:
-            return s["min_xp"]
+        if level < s["min_level"]:
+            return s["min_level"]
     return None
 
 # ─── Display ─────────────────────────────────────────────────────────────────
@@ -1493,17 +1500,19 @@ def print_pet(pet: dict, show_details: bool = True, animate: bool = False):
         print()
 
     if show_details:
-        # XP bar
-        next_stage_xp = xp_for_next_stage(pet["species"], pet["xp"])
-        if next_stage_xp:
-            stages      = SPECIES[pet["species"]]["stages"]
-            cur_stage   = stages[stage]
-            prog        = pet["xp"] - cur_stage["min_xp"]
-            needed      = next_stage_xp - cur_stage["min_xp"]
-            xp_bar      = bar(prog, needed)
-            print(f"  XP  {BBLUE}{xp_bar}{R} {int(pet['xp'])}/{int(next_stage_xp)}")
+        # XP bar: shows progress within current level
+        cur_lv   = xp_to_level(pet["xp"])
+        lv_start = level_to_xp(cur_lv)
+        lv_end   = level_to_xp(cur_lv + 1)
+        prog     = pet["xp"] - lv_start
+        needed   = lv_end - lv_start
+        xp_bar   = bar(prog, needed)
+        nxt_evo  = next_evo_level(pet["species"], pet["xp"])
+        if nxt_evo:
+            evo_hint = f"  {DIM}(진화 Lv.{nxt_evo}){R}"
         else:
-            print(f"  XP  {BYELLOW}{'█'*20}{R} MAX  {BYELLOW}★ 최고 진화!{R}")
+            evo_hint = f"  {BYELLOW}★ 최고 진화!{R}"
+        print(f"  XP  {BBLUE}{xp_bar}{R} Lv.{cur_lv}{evo_hint}")
 
         # Mood bar
         mood_bar = bar(pet["mood"], 100, fill="♥", empty="♡")
@@ -1958,15 +1967,17 @@ def _watch_draw_full(pet: dict, s: dict, status_msg: str = "") -> int:
     # Stats block (lines_below starts here)
     print()  # blank
 
-    next_xp = xp_for_next_stage(pet["species"], pet["xp"])
-    if next_xp:
-        stages   = SPECIES[pet["species"]]["stages"]
-        cur      = stages[stage]
-        prog     = pet["xp"] - cur["min_xp"]
-        needed   = next_xp - cur["min_xp"]
-        print(f"  XP  {BBLUE}{bar(prog, needed)}{R}  {int(pet['xp'])}/{int(next_xp)}")
+    cur_lv   = xp_to_level(pet["xp"])
+    lv_start = level_to_xp(cur_lv)
+    lv_end   = level_to_xp(cur_lv + 1)
+    prog     = pet["xp"] - lv_start
+    needed   = lv_end - lv_start
+    nxt_evo  = next_evo_level(pet["species"], pet["xp"])
+    if nxt_evo:
+        evo_hint = f"  {DIM}(진화 Lv.{nxt_evo}){R}"
     else:
-        print(f"  XP  {BYELLOW}{'█'*20}{R} MAX  {BYELLOW}★{R}")
+        evo_hint = f"  {BYELLOW}★{R}"
+    print(f"  XP  {BBLUE}{bar(prog, needed)}{R} Lv.{cur_lv}{evo_hint}")
     mood_bar = bar(pet["mood"], 100, fill="♥", empty="♡")
     print(f"  기분 {BRED}{mood_bar}{R} {mood_emoji} {mood_text}")
     print(f"  {BYELLOW}💰 {s['coins']}코인{R}  {DIM}보유 펫: {len(s['pets'])}마리{R}")
